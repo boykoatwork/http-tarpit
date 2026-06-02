@@ -160,3 +160,4 @@ def check_ip_reported_recently(ip_address: str) -> bool:
     finally:
         if conn:
             conn.close()
+
