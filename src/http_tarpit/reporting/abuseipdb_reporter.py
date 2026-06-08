@@ -34,8 +34,6 @@ async def report_ip_to_abuseipdb(ip_address: str,  target_port: int, comment_det
     try:
         async with ClientSession(headers=headers) as session:
             async with session.post(ABUSEIPDB_API_URL, data=params) as response:
-                response_json = await response.json()
-                
                 response.raise_for_status()
                 response_json = await response.json()
 

@@ -49,7 +49,16 @@ def get_geoip_data(ip_address: str) -> dict:
        ip_address.startswith("172.17.") or \
        ip_address.startswith("172.18.") or \
        ip_address.startswith("172.19.") or \
-       ip_address.startswith("172.2") or \
+       ip_address.startswith("172.20.") or \
+       ip_address.startswith("172.21.") or \
+       ip_address.startswith("172.22.") or \
+       ip_address.startswith("172.23.") or \
+       ip_address.startswith("172.24.") or \
+       ip_address.startswith("172.25.") or \
+       ip_address.startswith("172.26.") or \
+       ip_address.startswith("172.27.") or \
+       ip_address.startswith("172.28.") or \
+       ip_address.startswith("172.29.") or \
        ip_address.startswith("172.30.") or \
        ip_address.startswith("172.31."):
         log.debug(f"Skipping GeoIP lookup for private/local IP: {ip_address}")

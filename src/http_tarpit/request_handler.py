@@ -45,7 +45,7 @@ async def handle_request(request):
     start_time = time.monotonic()
     request_timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat() 
     peername = request.transport.get_extra_info('peername')
-    proxy_ip = "Unknown_Proxy"
+    proxy_ip = "Unknown Proxy"
     proxy_port = 0
     if peername:
         proxy_ip = peername[0]
@@ -127,7 +127,7 @@ async def handle_request(request):
                 log.warning(error_msg, extra={'extra_data': {'client_ip': ip_addr}})
                 break 
             except Exception as e_write:
-                error_msg = f"Error writing to {ip_addr}:{port}: {e_write}"
+                error_msg = f"Error writing to {ip_addr}:{proxy_port}: {e_write}"
                 event_log_data['error_message'] = error_msg
                 log.error(error_msg, exc_info=True, extra={'extra_data': {'client_ip': ip_addr}})
                 break 

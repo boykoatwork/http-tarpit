@@ -28,8 +28,7 @@ async def run_server():
             await asyncio.sleep(3600) # Просыпаемся раз в час для проверки
     except Exception as e:
         log.exception("Failed to start or run the server")
-        await runner.cleanup()
-        raise 
+        raise
     finally:
         log.info("Shutting down server resources...")
         if 'site' in locals() and site._server is not None: 

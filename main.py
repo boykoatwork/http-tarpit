@@ -28,15 +28,8 @@ try:
 except ImportError as e:
     log.exception(f"Failed to import application modules or init DB: {e}")
     sys.exit(1)
-except Exception as e_init: 
+except Exception as e_init:
     log.exception(f"Failed during application initialization: {e_init}")
-    sys.exit(1)
-    
-try:
-    from src.http_tarpit import config 
-    from src.http_tarpit.tarpit_server import run_server
-except ImportError as e:
-    log.exception(f"Failed to import application modules: {e}")
     sys.exit(1)
 
 
